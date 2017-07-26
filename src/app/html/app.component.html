@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let taskList of taskLists" class="col-md-3">
+            <card-list [tasks]="taskList" (notify)="onNotify($event)" class="container"></card-list>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-right">
+            <div class="form-inline">
+                <div class="form-group text-left">
+                    <input class="form-control" type="text" [(ngModel)]="taskToAdd.title" placeholder="title" />
+                </div>
+                <div class="form-group text-left">
+                    <input class="form-control" type="text" [(ngModel)]="taskToAdd.text" placeholder="text" />
+                </div>
+                <div class="form-group text-left">
+                    <button class="form-control" (click)="addToDo()" class="btn btn-default">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

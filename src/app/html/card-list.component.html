@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {{ tasks.name }}
+    </div>
+    <div class="panel-body">
+        <div *ngFor="let task of tasks.tasks">
+            <card [task]="task" (click)="onSelect(task)" [ngClass]="{'card-selected': selectedTask == task }"></card>
+        </div>
+        <div>
+            <button *ngIf="tasks.id === 0" (click)="moveToDone()">Move Selected to Done</button>
+        </div>
+    </div>
+</div>
