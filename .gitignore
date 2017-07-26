@@ -1,2 +1,3 @@
 /app/*.js
 /app/*.map.js
+.DS_Store
